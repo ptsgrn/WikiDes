@@ -1,4 +1,4 @@
-import en_core_web_md
+import th
 from spacy import displacy
 import spacy
 from read_write_file import *
@@ -28,7 +28,7 @@ sys.setrecursionlimit(3000)
 boundary = re.compile('^[0-9]$')
 tag_re = re.compile(r'<[^>]+>')
 
-nlp = en_core_web_md.load()
+nlp = th.load()
 # nlp = spacy.load('en_core_web_md')
 # nlp.add_pipe(nlp.create_pipe('sentencizer'), before='parser') # for spaCy 2.3.2
 nlp.add_pipe('sentencizer', before='parser')  # for spaCy 3.4.1
@@ -181,7 +181,7 @@ def get_wikidata_by_wikidata_id(wikidata_id):
         # print('description: ', description)
         # print('wikidata_id: ', wikidata_id)
 
-        if ('disambiguation page' in description.lower() or 'wiki' in description.lower()):
+        if ('disambiguation page' in description.lower() or 'wiki' in description.lower() or "หน้าแก้ความกำกวม" in description.lower()):
             return {}
 
         label = get_label(wikidata_root)

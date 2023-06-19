@@ -3,7 +3,7 @@ import spacy
 import pandas as pd
 import os
 
-nlp_en = spacy.load('en_core_web_md')
+nlp_en = spacy.load('th')
 from read_write_file import *
 
 def get_text_by_length(content, instance_text, max_length = 256, margin = 0):

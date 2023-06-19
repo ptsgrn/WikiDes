@@ -11,7 +11,7 @@ PUNCTS = string.punctuation + '”“¿?.�✔✅⤵➕➖⛔✍⃣.-'
 PUNCTS = list(PUNCTS)
 
 import spacy
-nlp_en = spacy.load('en_core_web_md')
+nlp_en = spacy.load('th')
 STOPWORDS = nlp_en.Defaults.stop_words
 
 
